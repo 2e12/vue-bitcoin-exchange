@@ -18,7 +18,7 @@
 
     <section class="section" id="app">
         <div class="container">
-          <div v-if="info" class="header">
+          <div v-if="info" class="content">
             <h1 class="title">
               1 {{ info.chartName }}
             </h1>
@@ -28,7 +28,6 @@
             <div v-for="(currency, index) in info.bpi" class="currency box">
               {{ currency.code }} {{ currency.rate_float }}
             </div>
-            <button class="button is-primary" v-on:click="refresh">Reload</button>
           </div>
           <div v-else-if="error" class="box has-text-danger">
             <p>An errour occured while loading the latest data.</p>
@@ -38,10 +37,11 @@
             Load
           </div>
 
+          <button class="button is-primary" v-on:click="refresh">Reload</button>
+
         </div>
       </section>
 
-      <section class="section">
         <div class="container">
           <footer class="footer">
             <div class="content has-text-centered">
@@ -49,7 +49,6 @@
             </div>
           </footer>
         <div>
-      </section>
 
     <script src="main.js" charset="utf-8"></script>
   </body>

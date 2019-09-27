@@ -33,8 +33,9 @@
             <p>An errour occured while loading the latest data.</p>
             <p>Please come back later.</p>
           </div>
-          <div v-else>
-            Load
+          <div v-else class="content">
+            Loading data
+            <progress class="progress is-small is-primary" max="100"></progress>
           </div>
 
           <button class="button is-primary" v-on:click="refresh">Reload</button>

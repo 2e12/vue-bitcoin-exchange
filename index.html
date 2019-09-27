@@ -29,14 +29,25 @@
               {{ currency.code }} {{ currency.rate_float }}
             </div>
           </div>
-          <div v-else-if="error" class="box">
+          <div v-else-if="error" class="box has-text-danger">
             <p>An errour occured while loading the latest data.</p>
             <p>Please come back later.</p>
           </div>
           <div v-else>
             Load
           </div>
+
         </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <footer class="footer">
+            <div class="content has-text-centered">
+              Developed at 4teamwork by Gabriel Beutler
+            </div>
+          </footer>
+        <div>
       </section>
 
     <script src="main.js" charset="utf-8"></script>

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-primary is-unselectable" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item">
         1 Bitcoin
@@ -19,10 +19,10 @@
     <section class="section" id="app">
         <div class="container">
           <div v-if="info" class="content">
-            <h1 class="title">
+            <h1 class="title is-unselectable">
               1 {{ info.chartName }}
             </h1>
-            <p class="subtitle">
+            <p class="subtitle is-unselectable">
               One Bitcoin corresponds to the value of:
             </p>
             <div v-for="(currency, index) in info.bpi" class="currency box">
@@ -45,7 +45,7 @@
 
         <div class="container">
           <footer class="footer">
-            <div class="content has-text-centered">
+            <div class="content has-text-centered is-unselectable">
               Developed at 4teamwork by Gabriel Beutler
             </div>
           </footer>

@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     info: null,
     error: false,
+    loading: true,
     data_url: "https://api.coindesk.com/v1/bpi/currentprice.json"
   },
   methods:{
@@ -21,15 +22,11 @@ var app = new Vue({
     },
     refresh: function () {
       this.error = false
-      this.info = null
+      this.loading = true
       this.loadData(this.data_url, (data) => {
         this.info = data
+        this.loading = false
       })
-    }
-  },
-  computed:{
-    isLoading: function () {
-      return !this.info
     }
   },
   mounted: function() {

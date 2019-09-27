@@ -22,6 +22,9 @@
             <h1 class="title">
               1 {{ info.chartName }}
             </h1>
+            <p class="subtitle">
+              One Bitcoin corresponds to the value of:
+            </p>
             <div v-for="(currency, index) in info.bpi" class="currency box">
               {{ currency.code }} {{ currency.rate_float }}
             </div>

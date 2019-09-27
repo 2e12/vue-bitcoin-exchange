@@ -28,6 +28,7 @@
             <div v-for="(currency, index) in info.bpi" class="currency box">
               {{ currency.code }} {{ currency.rate_float }}
             </div>
+            <button class="button is-primary" v-on:click="refresh">Reload</button>
           </div>
           <div v-else-if="error" class="box has-text-danger">
             <p>An errour occured while loading the latest data.</p>

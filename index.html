@@ -4,21 +4,38 @@
     <meta charset="utf-8">
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div id="app">
-      <div v-if="info" class="header">
-        <div class="main-currency">
-          1 {{ info.chartName }}
-        </div>
-        <div v-for="(currency, index) in info.bpi" class="currency">
-          {{ currency.code }} {{ currency.rate_float }}
-        </div>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+        1 Bitcoin
+      </a>
       </div>
-      <div v-else>
-        Load
-      </div>
-    </div>
+    </nav>
+
+    <section class="section" id="app">
+        <div class="container">
+          <div v-if="info" class="header">
+            <h1 class="title">
+              1 {{ info.chartName }}
+            </h1>
+            <div v-for="(currency, index) in info.bpi" class="currency box">
+              {{ currency.code }} {{ currency.rate_float }}
+            </div>
+          </div>
+          <div v-else-if="error" class="box">
+            <p>An errour occured while loading the latest data.</p>
+            <p>Please come back later.</p>
+          </div>
+          <div v-else>
+            Load
+          </div>
+        </div>
+      </section>
+
     <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
